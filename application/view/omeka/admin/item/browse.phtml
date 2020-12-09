@@ -10,7 +10,7 @@ $sortHeadings = [
     [
         'label' => $translate('Identifier'),
         'value' => 'dcterms:identifier'
-    ],
+    ], 
     [
         'label' => $translate('Class'),
         'value' => 'resource_class_label'
@@ -70,7 +70,9 @@ $sortHeadings = [
     <thead>
         <tr>
             <th><input type="checkbox" class="select-all" aria-label="<?php echo $translate('Select all'); ?>"><?php echo $translate('Title'); ?></th>
+            <th><?php echo $translate('Date'); ?></th>
             <th><?php echo $translate('Class'); ?></th>
+            <th><?php echo $translate('Type'); ?></th>
             <th><?php echo $translate('Owner'); ?></th>
             <th><?php echo $translate('Created'); ?></th>
         </tr>
@@ -123,7 +125,10 @@ $sortHeadings = [
                     ]); ?></li>
                 </ul>
             </td>
+            <!--Custom ADDED DC Date -->
+            <td><?php echo $item->value('dcterms:date'); ?></td>
             <td><?php echo $escape($translate($item->displayResourceClassLabel())); ?></td>
+            <td><?php echo $item->value('dcterms:type'); ?></td>
             <td><?php echo $ownerText; ?></td>
             <td><?php echo $escape($this->i18n()->dateFormat($item->created())); ?></td>
         </tr>

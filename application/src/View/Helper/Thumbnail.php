@@ -19,6 +19,7 @@ class Thumbnail extends AbstractHtmlElement
     public function __invoke(AbstractRepresentation $representation, $type, array $attribs = [])
     {
         $url = $representation->thumbnailDisplayUrl($type);
+        
         if ($url === null) {
             return '';
         }

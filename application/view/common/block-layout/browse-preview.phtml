@@ -22,7 +22,7 @@ foreach ($this->resources as $resource):
     <li class="<?php echo $this->resourceType; ?> resource">
         <?php
         if ($showThumbnail):
-            echo $resource->linkRaw($this->thumbnail($resource, 'medium', ['title' => $heading]));
+            echo $resource->linkRaw($this->thumbnail($resource, 'medium', ['title' => $heading, 'alt' => 'test']));
         endif;?>
         <?php
         if ($showHeading):
